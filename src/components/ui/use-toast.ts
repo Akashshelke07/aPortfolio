@@ -7,7 +7,7 @@ export interface ToastProps {
   variant?: "default" | "destructive"
 }
 
-type ToastActionElement = React.ReactElement
+export type ToastActionElement = React.ReactElement
 
 export interface ToasterToast extends ToastProps {
   id: string
