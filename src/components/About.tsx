@@ -15,7 +15,7 @@ export function About() {
         >
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">About Me</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full" />
+            <div className="h-1 w-20 bg-black mx-auto rounded-full" />
           </div>
 
           <Card className="border-border/50 bg-card/50 backdrop-blur-sm shadow-xl">
@@ -28,7 +28,7 @@ export function About() {
 
               <div className="space-y-4 pt-6 border-t border-border/50">
                 <div className="flex items-center space-x-2 text-xl font-semibold mb-4">
-                  <GraduationCap className="h-6 w-6 text-purple-500" />
+                  <GraduationCap className="h-6 w-6 text-black" />
                   <h3>Education</h3>
                 </div>
                 <div className="flex flex-col md:flex-row md:items-center justify-between p-4 rounded-lg bg-background/50 border border-border/50">
@@ -37,8 +37,8 @@ export function About() {
                     <p className="text-muted-foreground">Bachelor of Engineering in Information Technology</p>
                   </div>
                   <div className="mt-4 md:mt-0 text-right space-y-1">
-                    <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 text-sm font-medium">2022 – 2026</div>
-                    <div className="text-sm font-medium pt-1 text-purple-400">CGPA: 7.37</div>
+                    <div className="inline-block px-3 py-1 rounded-full bg-black/10 text-black text-sm font-medium">2022 – 2026</div>
+                    <div className="text-sm font-medium pt-1 text-black text-opacity-80">CGPA: 7.37</div>
                   </div>
                 </div>
               </div>

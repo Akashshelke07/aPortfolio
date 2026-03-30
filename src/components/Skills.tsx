@@ -6,7 +6,7 @@ export function Skills() {
   const categories = [
     {
       title: "Machine Learning & AI",
-      icon: <BrainCircuit className="h-6 w-6 text-blue-500" />,
+      icon: <BrainCircuit className="h-6 w-6 text-black" />,
       skills: [
         "LangChain, LangGraph, Scikit-learn, Sentence-Transformers",
         "RAG Pipelines, Prompt Engineering, Multi-Agent Systems",
@@ -15,7 +15,7 @@ export function Skills() {
     },
     {
       title: "Full-Stack Development",
-      icon: <Code2 className="h-6 w-6 text-purple-500" />,
+      icon: <Code2 className="h-6 w-6 text-black" />,
       skills: [
         "Frontend: React.js, Next.js, Tailwind CSS",
         "Backend: FastAPI, Flask, Node.js, Express.js, PyTorch",
@@ -24,7 +24,7 @@ export function Skills() {
     },
     {
       title: "DevOps & Languages",
-      icon: <Server className="h-6 w-6 text-blue-400" />,
+      icon: <Server className="h-6 w-6 text-black" />,
       skills: [
         "Languages: Python, JavaScript",
         "Docker, AWS S3",
@@ -53,7 +53,7 @@ export function Skills() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Core Skills</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full" />
+          <div className="h-1 w-20 bg-black mx-auto rounded-full" />
         </div>
 
         <motion.div
@@ -65,7 +65,7 @@ export function Skills() {
         >
           {categories.map((category, idx) => (
             <motion.div key={idx} variants={itemVariants} className="h-full">
-              <Card className="h-full border-border/40 bg-card/40 backdrop-blur-sm hover:border-purple-500/30 hover:shadow-lg hover:shadow-purple-500/5 transition-all duration-300">
+              <Card className="h-full border-border/40 bg-card/40 backdrop-blur-sm hover:border-black/30 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
                 <CardHeader className="flex flex-row items-center space-x-4 pb-4">
                   <div className="p-2 rounded-lg bg-background shadow-inner">
                     {category.icon}
@@ -76,7 +76,7 @@ export function Skills() {
                   <ul className="space-y-3">
                     {category.skills.map((skill, sIdx) => (
                       <li key={sIdx} className="flex items-start text-sm text-muted-foreground hover:text-foreground transition-colors">
-                        <span className="mr-2 text-purple-500 mt-1">•</span>
+                        <span className="mr-2 text-black mt-1">•</span>
                         <span>{skill}</span>
                       </li>
                     ))}

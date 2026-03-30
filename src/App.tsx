@@ -12,7 +12,7 @@ import { GlobalAnimations } from "./components/GlobalAnimations"
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-purple-500/30 selection:text-purple-100 font-sans relative">
+    <div className="min-h-screen bg-background text-foreground selection:bg-black/30 selection:text-black font-sans relative">
       <GlobalAnimations />
       <Navbar />
       <main>

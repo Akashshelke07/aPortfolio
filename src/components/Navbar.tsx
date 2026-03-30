@@ -36,14 +36,14 @@ export function Navbar() {
               smooth={true}
               duration={500}
               spy={true}
-              activeClass="text-purple-500"
+              activeClass="text-black"
               className="text-sm font-medium text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
             >
               {link.name}
             </Link>
           ))}
           <Link to="contact" smooth={true} duration={500}>
-            <Button variant="default" size="sm" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 transition-opacity text-white border-none">
+            <Button variant="default" size="sm" className="bg-black hover:bg-slate-800 transition-opacity text-white border-none">
               Contact Me
             </Button>
           </Link>
@@ -71,7 +71,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link to="contact" smooth={true} duration={500} onClick={() => setIsMobileMenuOpen(false)}>
-            <Button className="w-full bg-gradient-to-r from-blue-500 to-purple-600">Contact Me</Button>
+            <Button className="w-full bg-black hover:bg-slate-800 text-white">Contact Me</Button>
           </Link>
         </div>
       )}

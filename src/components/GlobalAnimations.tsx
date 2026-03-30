@@ -1,5 +1,41 @@
-import { Brain, Code, Cpu, Database, Globe, Rocket, Terminal, Layout, Briefcase, GraduationCap, Send, MessageSquare, Trophy } from "lucide-react"
+import { Brain, Code, Cpu, Database, Globe, Rocket, Terminal, Layout, Briefcase, GraduationCap, Send, MessageSquare, Trophy, Server, Monitor, Cloud, Zap, Cog } from "lucide-react"
 import { FloatingElement } from "./ui/FloatingElement"
+import { motion } from "framer-motion"
+
+const TechMesh = () => (
+  <svg className="absolute inset-0 w-full h-full opacity-[0.15] -z-10" viewBox="0 0 800 800">
+    <motion.path
+      d="M100 100 L300 200 L200 400 L500 300 L700 500 L400 700 L100 600 Z"
+      fill="none"
+      stroke="url(#gradient)"
+      strokeWidth="1"
+      initial={{ pathLength: 0, opacity: 0 }}
+      animate={{ pathLength: 1, opacity: 1 }}
+      transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+    />
+    <motion.circle
+      cx="300" cy="200" r="4" fill="#000000"
+      animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+      transition={{ duration: 2, repeat: Infinity }}
+    />
+    <motion.circle
+      cx="500" cy="300" r="4" fill="#000000"
+      animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+      transition={{ duration: 2, delay: 0.5, repeat: Infinity }}
+    />
+    <motion.circle
+      cx="200" cy="400" r="3" fill="#000000"
+      animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.7, 0.3] }}
+      transition={{ duration: 2, delay: 1, repeat: Infinity }}
+    />
+    <defs>
+      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#000000" />
+        <stop offset="100%" stopColor="#000000" />
+      </linearGradient>
+    </defs>
+  </svg>
+)
 
 export function GlobalAnimations() {
   return (
@@ -26,10 +62,26 @@ export function GlobalAnimations() {
       <FloatingElement icon={Trophy} className="top-[58%] left-[4%]" delay={1} duration={7} />
       <FloatingElement icon={MessageSquare} className="top-[78%] right-[4%]" delay={2.5} duration={8} />
       <FloatingElement icon={Send} className="top-[28%] left-[4%]" delay={4} duration={10} />
+      {/* Middle Scattered Tech Icons */}
+      <FloatingElement icon={Server} className="top-[15%] left-[24%]" delay={1.2} duration={7} />
+      <FloatingElement icon={Cloud} className="top-[85%] right-[22%]" delay={3.5} duration={9} />
+      <FloatingElement icon={Zap} className="top-[45%] left-[26%]" delay={0.8} duration={6} />
+      <FloatingElement icon={Monitor} className="top-[65%] right-[26%]" delay={2.2} duration={8} />
+      <FloatingElement icon={Cog} className="top-[95%] left-[22%]" delay={4.5} duration={10} />
+
+      {/* TechMesh from Hero */}
+      <TechMesh />
+      
+      {/* Background Pulses */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-black/5 rounded-full blur-[120px] -z-20 animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-black/5 rounded-full blur-[120px] -z-20 animate-pulse" />
+
+      {/* Futuristic Grid Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] -z-10" />
 
       {/* Radial Gradient Glows */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_0%,rgba(59,130,246,0.03)_0%,transparent_50%)]" />
-      <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_100%_100%,rgba(168,85,247,0.03)_0%,transparent_50%)]" />
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_0%,rgba(0,0,0,0.03)_0%,transparent_50%)]" />
+      <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_100%_100%,rgba(0,0,0,0.03)_0%,transparent_50%)]" />
     </div>
   )
 }

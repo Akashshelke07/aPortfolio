@@ -53,7 +53,7 @@ export function Projects() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Featured Projects</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full" />
+          <div className="h-1 w-20 bg-black mx-auto rounded-full" />
         </div>
 
         <motion.div
@@ -65,9 +65,9 @@ export function Projects() {
         >
           {projects.map((project, idx) => (
             <motion.div key={idx} variants={itemVariants} className="h-full">
-              <Card className="h-full flex flex-col overflow-hidden border-border/40 bg-card/60 backdrop-blur-sm group hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300">
+              <Card className="h-full flex flex-col overflow-hidden border-border/40 bg-card/60 backdrop-blur-sm group hover:border-black/50 hover:shadow-xl hover:shadow-black/10 transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-2xl group-hover:text-purple-400 transition-colors">{project.title}</CardTitle>
+                  <CardTitle className="text-2xl group-hover:text-black transition-colors">{project.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-1 space-y-4">
                   <CardDescription className="text-base leading-relaxed text-muted-foreground">
@@ -75,7 +75,7 @@ export function Projects() {
                   </CardDescription>
                   <div className="flex flex-wrap gap-2 pt-2">
                     {project.techStack.map((tech, tIdx) => (
-                      <Badge key={tIdx} variant="secondary" className="bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 font-medium">
+                      <Badge key={tIdx} variant="secondary" className="bg-black/10 text-black hover:bg-black/20 font-medium">
                         {tech}
                       </Badge>
                     ))}
@@ -91,7 +91,7 @@ export function Projects() {
                     </Button>
                   )}
                   {project.liveDemo && (
-                    <Button size="sm" className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90" asChild>
+                    <Button size="sm" className="w-full flex items-center justify-center gap-2 bg-black hover:bg-slate-800 text-white" asChild>
                       <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="w-4 h-4" />
                         Live Demo

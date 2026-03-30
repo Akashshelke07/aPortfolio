@@ -18,7 +18,7 @@ export function Footer() {
             href="https://linkedin.com/in/akash-shelke-5b1520259"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-blue-500 transition-colors p-2 rounded-full hover:bg-blue-500/10"
+            className="text-muted-foreground hover:text-black transition-colors p-2 rounded-full hover:bg-black/10"
           >
             <Linkedin className="w-5 h-5" />
             <span className="sr-only">LinkedIn</span>
@@ -34,7 +34,7 @@ export function Footer() {
           </a>
           <a
             href="mailto:akashshelke594@gmail.com"
-            className="text-muted-foreground hover:text-purple-500 transition-colors p-2 rounded-full hover:bg-purple-500/10"
+            className="text-muted-foreground hover:text-black transition-colors p-2 rounded-full hover:bg-black/10"
           >
             <Mail className="w-5 h-5" />
             <span className="sr-only">Email</span>

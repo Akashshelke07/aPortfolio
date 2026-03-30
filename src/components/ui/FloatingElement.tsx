@@ -35,7 +35,7 @@ export function FloatingElement({
       }}
       className={`absolute pointer-events-none drop-shadow-[0_0_20px_rgba(37,99,235,0.4)] ${className}`}
     >
-      <Icon className="w-14 h-14 md:w-24 md:h-24 text-blue-400" />
+      <Icon className="w-14 h-14 md:w-24 md:h-24 text-black" />
     </motion.div>
   )
 }

@@ -57,7 +57,7 @@ export function Contact() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Get In Touch</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full" />
+          <div className="h-1 w-20 bg-black mx-auto rounded-full" />
           <p className="text-muted-foreground max-w-2xl mx-auto pt-4 text-lg">
             Have a project in mind or want to discuss opportunities? I'd love to hear from you.
           </p>
@@ -72,9 +72,9 @@ export function Contact() {
             className="space-y-6"
           >
             {[
-              { icon: MapPin, title: "Location", value: "Pune, Maharashtra, India", color: "blue" },
-              { icon: Mail, title: "Email", value: "akashshelke594@gmail.com", color: "purple" },
-              { icon: Phone, title: "Phone", value: "+91-9527184882", color: "blue" },
+              { icon: MapPin, title: "Location", value: "Pune, Maharashtra, India", color: "slate" },
+              { icon: Mail, title: "Email", value: "akashshelke594@gmail.com", color: "slate" },
+              { icon: Phone, title: "Phone", value: "+91-9527184882", color: "slate" },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -82,7 +82,7 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="flex items-center space-x-4 p-6 rounded-2xl border-2 border-gray-100 shadow-xl group hover:border-blue-500/30 transition-all duration-300"
+                className="flex items-center space-x-4 p-6 rounded-2xl border-2 border-gray-100 shadow-xl group hover:border-black/30 transition-all duration-300"
               >
                 <div className={`p-4 rounded-full bg-${item.color}-50 text-${item.color}-600 border border-${item.color}-100 group-hover:scale-110 transition-transform`}>
                   <item.icon className="w-6 h-6" />
@@ -103,7 +103,7 @@ export function Contact() {
             className="p-8 rounded-2xl border-2 border-gray-100 shadow-2xl relative overflow-hidden group transition-all duration-500"
           >
             {/* Subtle inner glow (very light for transparent background) */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-100/5 to-purple-100/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div className="space-y-2">
@@ -112,7 +112,7 @@ export function Contact() {
                   id="name"
                   placeholder="John Doe"
                   required
-                  className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus-visible:ring-blue-600 h-12 border-2"
+                  className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus-visible:ring-black h-12 border-2"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
@@ -124,7 +124,7 @@ export function Contact() {
                   type="email"
                   placeholder="john@example.com"
                   required
-                  className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus-visible:ring-blue-600 h-12 border-2"
+                  className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus-visible:ring-black h-12 border-2"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
@@ -136,14 +136,14 @@ export function Contact() {
                   placeholder="Hello Akash..."
                   rows={5}
                   required
-                  className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus-visible:ring-blue-600 resize-none pt-4 border-2"
+                  className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus-visible:ring-black resize-none pt-4 border-2"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />
               </div>
               <Button
                 type="submit"
-                className="w-full h-12 bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 text-white rounded-lg transition-all"
+                className="w-full h-12 bg-black hover:bg-slate-800 text-white rounded-lg transition-all"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
