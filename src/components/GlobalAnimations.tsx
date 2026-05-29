@@ -3,7 +3,7 @@ import { FloatingElement } from "./ui/FloatingElement"
 import { motion } from "framer-motion"
 
 const TechMesh = () => (
-  <svg className="absolute inset-0 w-full h-full opacity-[0.15] -z-10" viewBox="0 0 800 800">
+  <svg className="absolute inset-0 w-full h-full opacity-[0.05] -z-10" viewBox="0 0 800 800">
     <motion.path
       d="M100 100 L300 200 L200 400 L500 300 L700 500 L400 700 L100 600 Z"
       fill="none"
@@ -41,7 +41,7 @@ export function GlobalAnimations() {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden h-full">
       {/* Background SVG Mesh - significantly more visible */}
-      <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 1000">
+      <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 1000 1000">
         <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
           <path d="M 80 0 L 0 0 0 80" fill="none" stroke="currentColor" strokeWidth="1" />
         </pattern>
@@ -77,7 +77,7 @@ export function GlobalAnimations() {
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-black/5 rounded-full blur-[120px] -z-20 animate-pulse" />
 
       {/* Futuristic Grid Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] -z-10" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] -z-10" />
 
       {/* Radial Gradient Glows */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_0%,rgba(0,0,0,0.03)_0%,transparent_50%)]" />

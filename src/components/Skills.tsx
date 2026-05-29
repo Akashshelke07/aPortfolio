@@ -1,6 +1,8 @@
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { BrainCircuit, Code2, Server } from "lucide-react"
+import { FaReact, FaNodeJs, FaPython, FaJs, FaDocker, FaAws, FaLink, FaProjectDiagram, FaLanguage, FaDatabase, FaKeyboard, FaUsersCog, FaVectorSquare } from "react-icons/fa"
+import { SiNextdotjs, SiTailwindcss, SiFastapi, SiFlask, SiExpress, SiPytorch, SiMongodb, SiMysql, SiPostgresql, SiRedis, SiPrometheus, SiGrafana, SiScikitlearn, SiOpenai, SiGoogle } from "react-icons/si"
 
 export function Skills() {
   const categories = [
@@ -8,27 +10,47 @@ export function Skills() {
       title: "Machine Learning & AI",
       icon: <BrainCircuit className="h-6 w-6 text-black" />,
       skills: [
-        "LangChain, LangGraph, Scikit-learn, Sentence-Transformers",
-        "RAG Pipelines, Prompt Engineering, Multi-Agent Systems",
-        "OpenAI API, Google Gemini, ChromaDB, Embeddings"
+        { name: "LangChain", icon: FaLink, color: "text-blue-500" },
+        { name: "LangGraph", icon: FaProjectDiagram, color: "text-purple-500" },
+        { name: "Scikit-learn", icon: SiScikitlearn, color: "text-orange-500" },
+        { name: "Sentence-Transformers", icon: FaLanguage, color: "text-blue-400" },
+        { name: "RAG Pipelines", icon: FaDatabase, color: "text-indigo-500" },
+        { name: "Prompt Engineering", icon: FaKeyboard, color: "text-gray-600" },
+        { name: "Multi-Agent Systems", icon: FaUsersCog, color: "text-blue-600" },
+        { name: "OpenAI API", icon: SiOpenai, color: "text-foreground" },
+        { name: "Google Gemini", icon: SiGoogle, color: "text-blue-500" },
+        { name: "ChromaDB", icon: FaDatabase, color: "text-rose-500" },
+        { name: "Embeddings", icon: FaVectorSquare, color: "text-green-500" }
       ]
     },
     {
       title: "Full-Stack Development",
       icon: <Code2 className="h-6 w-6 text-black" />,
       skills: [
-        "Frontend: React.js, Next.js, Tailwind CSS",
-        "Backend: FastAPI, Flask, Node.js, Express.js, PyTorch",
-        "Databases: MongoDB, MySQL, PostgreSQL, Redis"
+        { name: "React.js", icon: FaReact, color: "text-[#61DAFB]" },
+        { name: "Next.js", icon: SiNextdotjs, color: "text-foreground" },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#38B2AC]" },
+        { name: "FastAPI", icon: SiFastapi, color: "text-[#009688]" },
+        { name: "Flask", icon: SiFlask, color: "text-foreground" },
+        { name: "Node.js", icon: FaNodeJs, color: "text-[#339933]" },
+        { name: "Express.js", icon: SiExpress, color: "text-foreground" },
+        { name: "PyTorch", icon: SiPytorch, color: "text-[#EE4C2C]" },
+        { name: "MongoDB", icon: SiMongodb, color: "text-[#47A248]" },
+        { name: "MySQL", icon: SiMysql, color: "text-[#4479A1]" },
+        { name: "PostgreSQL", icon: SiPostgresql, color: "text-[#336791]" },
+        { name: "Redis", icon: SiRedis, color: "text-[#DC382D]" }
       ]
     },
     {
       title: "DevOps & Languages",
       icon: <Server className="h-6 w-6 text-black" />,
       skills: [
-        "Languages: Python, JavaScript",
-        "Docker, AWS S3",
-        "Monitoring: Prometheus, Grafana"
+        { name: "Python", icon: FaPython, color: "text-[#3776AB]" },
+        { name: "JavaScript", icon: FaJs, color: "text-[#F7DF1E]" },
+        { name: "Docker", icon: FaDocker, color: "text-[#2496ED]" },
+        { name: "AWS S3", icon: FaAws, color: "text-[#232F3E]" },
+        { name: "Prometheus", icon: SiPrometheus, color: "text-[#E6522C]" },
+        { name: "Grafana", icon: SiGrafana, color: "text-[#F46800]" }
       ]
     }
   ]
@@ -73,14 +95,17 @@ export function Skills() {
                   <CardTitle className="text-xl">{category.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3">
-                    {category.skills.map((skill, sIdx) => (
-                      <li key={sIdx} className="flex items-start text-sm text-muted-foreground hover:text-foreground transition-colors">
-                        <span className="mr-2 text-black mt-1">•</span>
-                        <span>{skill}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill, sIdx) => {
+                      const Icon = skill.icon
+                      return (
+                        <div key={sIdx} className="flex items-center px-3 py-1.5 border border-border/60 rounded-md bg-background hover:bg-muted/50 transition-colors group cursor-default shadow-sm hover:shadow-md">
+                          <Icon className={`w-4 h-4 mr-2 ${skill.color} group-hover:scale-110 transition-transform duration-300`} />
+                          <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                        </div>
+                      )
+                    })}
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>

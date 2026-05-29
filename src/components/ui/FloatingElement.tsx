@@ -22,7 +22,7 @@ export function FloatingElement({
     <motion.div
       initial={{ opacity: 0, y: yOffset }}
       animate={{ 
-        opacity: [0.35, 0.75, 0.35], 
+        opacity: [0.1, 0.3, 0.1], 
         y: [0, -yOffset, 0],
         rotate: [0, rotate, -rotate, 0],
         scale: [1, 1.15, 1]

@@ -13,7 +13,7 @@ export function Navbar() {
     { name: "Skills", to: "skills" },
     { name: "Projects", to: "projects" },
     { name: "Experience", to: "experience" },
-    { name: "Certificates", to: "certificates" },
+    { name: "Expertise", to: "certificates" },
   ]
 
   useEffect(() => {

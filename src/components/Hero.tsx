@@ -1,9 +1,12 @@
 import { motion } from "framer-motion"
 import { Button } from "./ui/button"
 import { Link } from "react-scroll"
-import { ArrowRight, Mail } from "lucide-react"
+import { Briefcase, FileText } from "lucide-react"
 import heroAnimation from "../transparent_gitgif.gif"
+import Typewriter from "typewriter-effect"
 
+
+import { FaReact, FaPython, FaLink, FaProjectDiagram, FaRobot, FaDatabase } from "react-icons/fa"
 
 export function Hero() {
   const containerVariants = {
@@ -46,9 +49,9 @@ export function Hero() {
               variants={itemVariants} 
               className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1]"
             >
-              Hi, I'm{" "}
-              <span className="relative inline-block">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-black via-slate-800 to-black bg-300% animate-gradient">
+              <span style={{ fontFamily: "'Pacifico', cursive", fontWeight: 'normal' }} className="text-5xl md:text-7xl lg:text-8xl inline-block mb-2 text-black/90">Hi, I'm</span>{" "}
+              <span className="relative inline-block whitespace-nowrap">
+                <span className="text-black font-[SuperSlicedItalic] tracking-wider italic">
                   Akash Shelke
                 </span>
                 <motion.span 
@@ -63,18 +66,62 @@ export function Hero() {
             {/* Subheading */}
             <motion.h2 
               variants={itemVariants}
-              className="text-2xl md:text-3xl font-bold text-foreground/90 tracking-wide"
+              className="text-2xl md:text-3xl font-bold text-black tracking-wide h-10 md:h-12 flex items-center justify-center lg:justify-start"
             >
-              Full-Stack Developer & <span className="text-black">AI/ML Engineer</span>
+              <Typewriter
+                options={{
+                  strings: [
+                    'Generative AI Engineer',
+                    'AI/ML Engineer',
+                    'Full-Stack Developer',
+                    'Freelancer'
+                  ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
             </motion.h2>
 
-            {/* Tagline Reverted to Transparent with Black Text */}
+            <motion.p
+              variants={itemVariants}
+              className="text-2xl sm:text-3xl md:text-4xl text-red-600 max-w-2xl lg:mx-0 mx-auto pt-2 text-center lg:text-left font-semibold tracking-wide leading-[1.3]"
+              style={{ fontFamily: "'Dancing Script', cursive" }}
+            >
+              <span className="block whitespace-nowrap">Freelancer with 2+ years of experience</span>
+              <span className="block whitespace-nowrap">in Full-Stack & AI Development</span>
+            </motion.p>
+
+            {/* Tagline Badges */}
             <motion.p 
               variants={itemVariants}
-              className="text-lg md:text-xl text-black max-w-2xl lg:mx-0 mx-auto leading-relaxed font-bold"
+              className="text-lg md:text-xl text-black max-w-2xl lg:mx-0 mx-auto leading-relaxed font-bold pt-3"
             >
-              "Building intelligent systems that are actually useful — crafting production-ready products with MERN, Python, LangChain, and LLMs."
+              "Designing and building production-grade AI solutions and web applications for real-world challenges."
             </motion.p>
+            
+            <motion.div 
+              variants={itemVariants}
+              className="text-lg md:text-xl text-black max-w-2xl lg:mx-0 mx-auto leading-relaxed font-bold flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-3 pt-2"
+            >
+              <span className="inline-flex items-center gap-1.5 bg-black/5 px-3 py-1.5 rounded-md border border-black/10 text-sm align-middle whitespace-nowrap">
+                <FaDatabase className="w-4 h-4 text-blue-500" /> RAG
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-black/5 px-3 py-1.5 rounded-md border border-black/10 text-sm align-middle whitespace-nowrap">
+                <FaLink className="w-4 h-4 text-blue-600" /> LangChain
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-black/5 px-3 py-1.5 rounded-md border border-black/10 text-sm align-middle whitespace-nowrap">
+                <FaPython className="w-4 h-4 text-[#3776AB]" /> Python
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-black/5 px-3 py-1.5 rounded-md border border-black/10 text-sm align-middle whitespace-nowrap">
+                <FaProjectDiagram className="w-4 h-4 text-purple-500" /> LangGraph
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-black/5 px-3 py-1.5 rounded-md border border-black/10 text-sm align-middle whitespace-nowrap">
+                <FaRobot className="w-4 h-4 text-indigo-500" /> LLMs
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-black/5 px-3 py-1.5 rounded-md border border-black/10 text-sm align-middle whitespace-nowrap">
+                <FaReact className="w-4 h-4 text-[#61DAFB]" /> React.js
+              </span>
+            </motion.div>
 
             {/* CTA Buttons */}
             <motion.div 
@@ -82,10 +129,10 @@ export function Hero() {
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 pt-4"
             >
               <Link to="projects" smooth={true} duration={500}>
-                <Button size="lg" className="h-14 px-10 bg-black hover:bg-slate-800 text-white rounded-full transition-all duration-300 shadow-xl shadow-black/20 group relative overflow-hidden">
+                <Button size="lg" className="h-14 px-10 bg-green-600 hover:bg-green-700 text-white rounded-full transition-all duration-300 shadow-xl shadow-green-600/20 group relative overflow-hidden border-0">
                   <span className="relative z-10 flex items-center">
+                    <Briefcase className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                     View Projects
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <motion.div 
                     className="absolute inset-0 bg-white/10" 
@@ -95,12 +142,20 @@ export function Hero() {
                   />
                 </Button>
               </Link>
-              <Link to="contact" smooth={true} duration={500}>
-                <Button size="lg" variant="outline" className="h-14 px-10 rounded-full border-muted-foreground/30 hover:bg-white/5 hover:border-black/50 transition-all duration-300 backdrop-blur-sm group">
-                  <Mail className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Contact Me
+              <a href="https://drive.google.com/file/d/1dsAa0kBokSfBt2V_4ek72punWb-LydOt/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="h-14 px-10 bg-[#ea580c] hover:bg-[#c2410c] text-white rounded-full transition-all duration-300 shadow-xl shadow-[#ea580c]/20 group relative overflow-hidden border-0">
+                  <span className="relative z-10 flex items-center">
+                    <FileText className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                    Resume
+                  </span>
+                  <motion.div 
+                    className="absolute inset-0 bg-white/10" 
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "100%" }}
+                    transition={{ duration: 0.6 }}
+                  />
                 </Button>
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -111,27 +166,17 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="relative flex justify-center items-center"
           >
-            <div className="relative group">
+            <div className="relative">
               {/* Decorative Glow */}
-              <div className="absolute -inset-4 bg-black rounded-2xl blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+              <div className="absolute -inset-4 bg-black rounded-2xl blur-3xl opacity-20" />
               
-              <motion.div
-                animate={{ 
-                  y: [0, -15, 0],
-                }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
-                }}
-                className="relative bg-background/40 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl overflow-hidden"
-              >
+              <div className="relative bg-background/40 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl overflow-hidden">
                 <img 
                   src={heroAnimation} 
                   alt="Futuristic Tech Animation" 
                   className="w-full max-w-[450px] lg:max-w-none h-auto rounded-lg mix-blend-screen opacity-90"
                 />
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

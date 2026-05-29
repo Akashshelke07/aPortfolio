@@ -17,7 +17,7 @@ export function Experience() {
     },
     {
       role: "Software Engineer Intern",
-      company: "Accenture Technologies Ltd",
+      company: "ScaleFull Technologies LLP",
       duration: "Dec 2024 – Feb 2025",
       bullets: [
         "Designed and integrated an AI-powered recommendation engine using Scikit-learn and Sentence-Transformers, personalizing travel suggestions based on user mood, budget, and preferences.",
@@ -36,7 +36,7 @@ export function Experience() {
           <div className="h-1 w-20 bg-black mx-auto rounded-full" />
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-8 relative before:absolute before:inset-0 before:ml-5 md:before:ml-[50%] before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-black/20 before:via-black/40 before:to-transparent">
+        <div className="max-w-4xl mx-auto space-y-8 relative before:absolute before:top-0 before:bottom-0 before:left-5 md:before:left-1/2 before:-translate-x-1/2 before:w-0.5 before:bg-gradient-to-b before:from-black/20 before:via-black/40 before:to-transparent">
           {experiences.map((exp, idx) => (
             <motion.div
               key={idx}
@@ -46,7 +46,7 @@ export function Experience() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active`}
             >
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-black shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 absolute left-0 md:left-1/2 -ml-5 md:ml-0 z-10">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-black shadow shrink-0 absolute left-5 md:left-1/2 -translate-x-1/2 z-10">
                 <Briefcase className="w-4 h-4 text-white" />
               </div>
 

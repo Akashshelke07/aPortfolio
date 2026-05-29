@@ -14,6 +14,37 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    const nameRegex = /^[a-zA-Z\s]{3,50}$/
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (!nameRegex.test(formData.name.trim())) {
+      toast({
+        title: "Invalid Name",
+        description: "Please enter a valid name (letters and spaces only, minimum 3 characters).",
+        variant: "destructive",
+      })
+      return
+    }
+
+    if (!emailRegex.test(formData.email.trim())) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      })
+      return
+    }
+
+    if (formData.message.trim().length < 10) {
+      toast({
+        title: "Message Too Short",
+        description: "Please enter a message of at least 10 characters so I can understand your request.",
+        variant: "destructive",
+      })
+      return
+    }
+
     setIsSubmitting(true)
 
     // IMPORTANT: Replace YOUR_ACCESS_KEY_HERE with your real key from web3forms.com
@@ -72,9 +103,9 @@ export function Contact() {
             className="space-y-6"
           >
             {[
-              { icon: MapPin, title: "Location", value: "Pune, Maharashtra, India", color: "slate" },
-              { icon: Mail, title: "Email", value: "akashshelke594@gmail.com", color: "slate" },
-              { icon: Phone, title: "Phone", value: "+91-9527184882", color: "slate" },
+              { icon: MapPin, title: "Location", value: "Pune, Maharashtra, India", iconClass: "bg-red-50 text-red-500 border-red-100" },
+              { icon: Mail, title: "Email", value: "akashshelke594@gmail.com", iconClass: "bg-blue-50 text-blue-500 border-blue-100" },
+              { icon: Phone, title: "Phone", value: "+91-9527184882", iconClass: "bg-green-50 text-green-600 border-green-100" },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -84,12 +115,12 @@ export function Contact() {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 className="flex items-center space-x-4 p-6 rounded-2xl border-2 border-gray-100 shadow-xl group hover:border-black/30 transition-all duration-300"
               >
-                <div className={`p-4 rounded-full bg-${item.color}-50 text-${item.color}-600 border border-${item.color}-100 group-hover:scale-110 transition-transform`}>
+                <div className={`p-4 rounded-full border group-hover:scale-110 transition-transform ${item.iconClass}`}>
                   <item.icon className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 text-lg">{item.title}</h3>
-                  <p className="text-gray-600 font-medium">{item.value}</p>
+                  <p className="text-gray-800 font-semibold">{item.value}</p>
                 </div>
               </motion.div>
             ))}
@@ -104,13 +135,13 @@ export function Contact() {
           >
             {/* Subtle inner glow (very light for transparent background) */}
             <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
+
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div className="space-y-2">
                 <Label htmlFor="name" className="text-gray-900 font-bold">Complete Name</Label>
                 <Input
                   id="name"
-                  placeholder="John Doe"
+                  placeholder="Entre Your Name"
                   required
                   className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus-visible:ring-black h-12 border-2"
                   value={formData.name}
@@ -122,7 +153,7 @@ export function Contact() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder="Enter Your Email"
                   required
                   className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus-visible:ring-black h-12 border-2"
                   value={formData.email}
