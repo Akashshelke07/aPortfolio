@@ -29,7 +29,7 @@ export function Experience() {
     {
       role: "Assistant Full Stack Developer",
       company: "Humanity Conserve",
-      duration: "Apr 2024 – Jun 15, 2024",
+      duration: "Apr 2026 – Jun 15, 2026",
       bullets: [
         "Helped build a full-stack platform for a Smart Learning Space and Toy Library, focusing on activity-based learning and child brain development.",
         "Supported the development of a scalable franchise model to empower homemakers and senior citizens.",
