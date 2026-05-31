@@ -25,6 +25,16 @@ export function Experience() {
         "Built a Python/Flask microservice that used NLP-based embeddings and Sentence-Transformers to match users with destinations from large-scale Kaggle datasets.",
         "Contributed to the full development life cycle — from data pre-processing and model selection to API integration, testing, and deployment."
       ]
+    },
+    {
+      role: "Assistant Full Stack Developer",
+      company: "Humanity Conserve",
+      duration: "Apr 2024 – Jun 15, 2024",
+      bullets: [
+        "Helped build a full-stack platform for a Smart Learning Space and Toy Library, focusing on activity-based learning and child brain development.",
+        "Supported the development of a scalable franchise model to empower homemakers and senior citizens.",
+        "Championed screen-free engagement and cognitive growth for kids, embracing the core philosophy: “Play Smart, Grow Smart!”"
+      ]
     }
   ]
 
