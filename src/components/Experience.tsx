@@ -5,17 +5,6 @@ import { Briefcase } from "lucide-react"
 export function Experience() {
   const experiences = [
     {
-      role: "Freelance Full-Stack Developer",
-      company: "SBrainiac Learning",
-      duration: "Oct 2025 – Jan 2026",
-      bullets: [
-        "Developed and deployed an AI-assisted e-learning platform using the MERN stack, serving 1,000+ users with an 85% course completion rate.",
-        "Designed and implemented custom REST APIs with Node.js and MongoDB for secure authentication, role-based access control, and real-time progress tracking.",
-        "Integrated Razorpay for payments and AWS S3 for scalable media storage, ensuring reliable content delivery as the user base grew.",
-        "Deployed and maintained the platform on Vercel and Render, ensuring consistent uptime and production-grade reliability."
-      ]
-    },
-    {
       role: "Software Engineer Intern",
       company: "ScaleFull Technologies LLP",
       duration: "Dec 2024 – Feb 2025",
@@ -24,6 +13,17 @@ export function Experience() {
         "Built the full-stack application layer with React.js, Node.js, Express, and MongoDB, integrating the AI engine via custom API interfaces.",
         "Built a Python/Flask microservice that used NLP-based embeddings and Sentence-Transformers to match users with destinations from large-scale Kaggle datasets.",
         "Contributed to the full development life cycle — from data pre-processing and model selection to API integration, testing, and deployment."
+      ]
+    },
+    {
+      role: "Freelance Full-Stack Developer",
+      company: "SBrainiac Learning",
+      duration: "Oct 2025 – Jan 2026",
+      bullets: [
+        "Developed and deployed an AI-assisted e-learning platform using the MERN stack, serving 1,000+ users with an 85% course completion rate.",
+        "Designed and implemented custom REST APIs with Node.js and MongoDB for secure authentication, role-based access control, and real-time progress tracking.",
+        "Integrated Razorpay for payments and AWS S3 for scalable media storage, ensuring reliable content delivery as the user base grew.",
+        "Deployed and maintained the platform on Vercel and Render, ensuring consistent uptime and production-grade reliability."
       ]
     },
     {
