@@ -7,7 +7,7 @@ export function Experience() {
     {
       role: "Freelance Full-Stack Developer",
       company: "SBrainiac Learning",
-      duration: "Oct 2023 – Jan 2024",
+      duration: "Oct 2025 – Jan 2026",
       bullets: [
         "Developed and deployed an AI-assisted e-learning platform using the MERN stack, serving 1,000+ users with an 85% course completion rate.",
         "Designed and implemented custom REST APIs with Node.js and MongoDB for secure authentication, role-based access control, and real-time progress tracking.",
