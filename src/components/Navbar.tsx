@@ -10,9 +10,9 @@ export function Navbar() {
   const navLinks = [
     { name: "Home", to: "home" },
     { name: "About", to: "about" },
+    { name: "Experience", to: "experience" },
     { name: "Skills", to: "skills" },
     { name: "Projects", to: "projects" },
-    { name: "Experience", to: "experience" },
     { name: "Expertise", to: "certificates" },
   ]
 

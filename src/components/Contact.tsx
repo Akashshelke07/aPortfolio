@@ -103,9 +103,21 @@ export function Contact() {
             className="space-y-6"
           >
             {[
-              { icon: MapPin, title: "Location", value: "Pune, Maharashtra, India", iconClass: "bg-red-50 text-red-500 border-red-100" },
-              { icon: Mail, title: "Email", value: "akashshelke594@gmail.com", iconClass: "bg-blue-50 text-blue-500 border-blue-100" },
-              { icon: Phone, title: "Phone", value: "+91-9527184882", iconClass: "bg-green-50 text-green-600 border-green-100" },
+              { 
+                icon: MapPin, 
+                title: "Location", 
+                value: "Pune, Maharashtra, India", 
+                isLink: false,
+                iconClass: "bg-gray-100 text-black border-gray-200" 
+              },
+              { 
+                icon: Mail, 
+                title: "Email", 
+                value: "akashshelke594@gmail.com", 
+                isLink: true,
+                href: "mailto:akashshelke594@gmail.com",
+                iconClass: "bg-gray-100 text-black border-gray-200" 
+              },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -113,14 +125,20 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="flex items-center space-x-4 p-6 rounded-2xl border-2 border-gray-100 shadow-xl group hover:border-black/30 transition-all duration-300"
+                className="flex items-center space-x-4 p-6 rounded-2xl border-2 border-gray-200 bg-white shadow-xl group hover:border-black/50 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className={`p-4 rounded-full border group-hover:scale-110 transition-transform ${item.iconClass}`}>
                   <item.icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 text-lg">{item.title}</h3>
-                  <p className="text-gray-800 font-semibold">{item.value}</p>
+                  <h3 className="font-bold text-black text-lg">{item.title}</h3>
+                  {item.isLink ? (
+                    <a href={item.href} className="text-gray-900 font-bold hover:text-black transition-colors underline underline-offset-4 decoration-black/30 hover:decoration-black">
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="text-gray-900 font-bold">{item.value}</p>
+                  )}
                 </div>
               </motion.div>
             ))}
