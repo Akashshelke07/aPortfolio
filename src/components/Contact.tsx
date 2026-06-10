@@ -126,19 +126,19 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="flex items-center space-x-4 p-6 rounded-2xl border-2 border-gray-200 bg-white shadow-xl group hover:border-black/50 hover:-translate-y-1 transition-all duration-300"
+                className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-6 rounded-2xl border-2 border-gray-100 bg-white shadow-lg hover:shadow-xl group hover:border-black/20 hover:-translate-y-1 transition-all duration-300"
               >
-                <div className={`p-3 rounded-full border group-hover:scale-110 transition-transform ${item.iconClass}`}>
-                  <img src={item.imgUrl} alt={item.title} className="w-8 h-8 object-contain" />
+                <div className="shrink-0 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
+                  <img src={item.imgUrl} alt={item.title} className="w-10 h-10 md:w-12 md:h-12 object-contain drop-shadow-md" />
                 </div>
-                <div>
-                  <h3 className="font-bold text-black text-lg">{item.title}</h3>
+                <div className="flex-1 min-w-0 w-full">
+                  <h3 className="font-bold text-gray-500 text-xs sm:text-sm uppercase tracking-wider mb-1">{item.title}</h3>
                   {item.isLink ? (
-                    <a href={item.href} className="text-gray-900 font-bold hover:text-black transition-colors underline underline-offset-4 decoration-black/30 hover:decoration-black">
+                    <a href={item.href} className="text-base sm:text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors break-words sm:break-normal block">
                       {item.value}
                     </a>
                   ) : (
-                    <p className="text-gray-900 font-bold">{item.value}</p>
+                    <p className="text-base sm:text-lg font-bold text-gray-900 break-words sm:break-normal block">{item.value}</p>
                   )}
                 </div>
               </motion.div>
