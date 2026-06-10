@@ -87,8 +87,8 @@ export function Hero() {
               className="text-2xl sm:text-3xl md:text-4xl text-red-600 max-w-2xl lg:mx-0 mx-auto pt-2 text-center lg:text-left font-semibold tracking-wide leading-[1.3]"
               style={{ fontFamily: "'Dancing Script', cursive" }}
             >
-              <span className="block whitespace-nowrap">Freelancer with 2+ years of experience</span>
-              <span className="block whitespace-nowrap">in Full-Stack & AI Development</span>
+              <span className="block">Software Developer and Freelancer with 1+ years of experience</span>
+              <span className="block">in Full-Stack & AI Development</span>
             </motion.p>
 
             {/* Tagline Badges */}

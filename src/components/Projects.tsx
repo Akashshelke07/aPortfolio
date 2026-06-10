@@ -3,8 +3,8 @@ import { ExternalLink, Github } from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card"
 import { Badge } from "./ui/badge"
 import { Button } from "./ui/button"
-import { FaReact, FaNodeJs, FaPython, FaDocker, FaAws, FaDatabase, FaLink, FaProjectDiagram, FaTerminal, FaCode, FaRobot, FaBrain, FaLanguage } from "react-icons/fa"
-import { SiFastapi, SiFlask, SiPytorch, SiTailwindcss, SiGoogle, SiMongodb, SiPostgresql, SiPrometheus, SiGrafana, SiExpress, SiScikitlearn } from "react-icons/si"
+import { FaReact, FaNodeJs, FaPython, FaDocker, FaAws, FaDatabase, FaLink, FaProjectDiagram, FaTerminal, FaCode, FaRobot, FaBrain, FaLanguage, FaFilePdf, FaChartBar, FaMicrochip, FaNetworkWired } from "react-icons/fa"
+import { SiFastapi, SiFlask, SiPytorch, SiTailwindcss, SiGoogle, SiMongodb, SiPostgresql, SiPrometheus, SiGrafana, SiExpress, SiScikitlearn, SiPandas, SiSqlite, SiFramer, SiVite } from "react-icons/si"
 
 const TechIcon = ({ name }: { name: string }) => {
   const iconData: Record<string, { icon: React.ElementType, color: string }> = {
@@ -40,7 +40,15 @@ const TechIcon = ({ name }: { name: string }) => {
     "Llama-3.2": { icon: FaRobot, color: "text-blue-600" },
     "Razorpay": { icon: FaCode, color: "text-[#02042B]" },
     "Vercel": { icon: FaTerminal, color: "text-black" },
-    "Render": { icon: FaCloud, color: "text-[#46E3B7]" }
+    "Render": { icon: FaCloud, color: "text-[#46E3B7]" },
+    "Pandas": { icon: SiPandas, color: "text-[#150458]" },
+    "SQLite": { icon: SiSqlite, color: "text-[#003B57]" },
+    "ReportLab": { icon: FaFilePdf, color: "text-red-500" },
+    "Recharts": { icon: FaChartBar, color: "text-blue-400" },
+    "Framer-Motion": { icon: SiFramer, color: "text-black" },
+    "Groq": { icon: FaMicrochip, color: "text-orange-500" },
+    "MCP": { icon: FaNetworkWired, color: "text-purple-600" },
+    "Vite": { icon: SiVite, color: "text-[#646CFF]" }
   }
   
   const data = iconData[name] || { icon: FaCode, color: "text-gray-600" }
@@ -70,8 +78,8 @@ export function Projects() {
     },
     {
       title: "FinReport Agent",
-      description: "An agentic AI platform that digests raw accounting data and autonomously generates financial statements, management reports, and compliance documents using a multi-agent LangGraph workflow and RAG pipeline.",
-      techStack: ["React", "Flask", "TailWind CSS", "Python", "FastAPI", "LangChain", "Google Gemini", "Pinecone", "LangGraph", "ChromaDB"],
+      description: "An automated, agentic AI platform that digests raw accounting data to autonomously generate board-ready financial statements and compliance documents. Built with a multi-agent LangGraph workflow, RAG pipeline, and secure FastMCP tool execution.",
+      techStack: ["React", "Vite", "Tailwind CSS", "Python", "FastAPI", "LangGraph", "LangChain", "MCP", "ChromaDB", "Pandas", "SQLite", "Groq"],
       github: "https://github.com/Akashshelke07/finreport-agent",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
     },
