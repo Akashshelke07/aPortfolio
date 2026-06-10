@@ -6,7 +6,8 @@ import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 import { Label } from "./ui/label"
 import { useToast } from "./ui/use-toast"
-
+import mapIcon from "../map.png"
+import mailIcon from "../mail.png"
 export function Contact() {
   const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -104,19 +105,19 @@ export function Contact() {
           >
             {[
               { 
-                icon: MapPin, 
+                imgUrl: mapIcon, 
                 title: "Location", 
                 value: "Pune, Maharashtra, India", 
                 isLink: false,
-                iconClass: "bg-gray-100 text-black border-gray-200" 
+                iconClass: "bg-white border-gray-100 shadow-md shadow-gray-200/50" 
               },
               { 
-                icon: Mail, 
+                imgUrl: mailIcon, 
                 title: "Email", 
                 value: "akashshelke594@gmail.com", 
                 isLink: true,
                 href: "mailto:akashshelke594@gmail.com",
-                iconClass: "bg-gray-100 text-black border-gray-200" 
+                iconClass: "bg-white border-gray-100 shadow-md shadow-gray-200/50" 
               },
             ].map((item, index) => (
               <motion.div
@@ -127,8 +128,8 @@ export function Contact() {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 className="flex items-center space-x-4 p-6 rounded-2xl border-2 border-gray-200 bg-white shadow-xl group hover:border-black/50 hover:-translate-y-1 transition-all duration-300"
               >
-                <div className={`p-4 rounded-full border group-hover:scale-110 transition-transform ${item.iconClass}`}>
-                  <item.icon className="w-6 h-6" />
+                <div className={`p-3 rounded-full border group-hover:scale-110 transition-transform ${item.iconClass}`}>
+                  <img src={item.imgUrl} alt={item.title} className="w-8 h-8 object-contain" />
                 </div>
                 <div>
                   <h3 className="font-bold text-black text-lg">{item.title}</h3>
@@ -156,10 +157,10 @@ export function Contact() {
 
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-gray-900 font-bold">Complete Name</Label>
+                <Label htmlFor="name" className="text-gray-900 font-bold">Full Name</Label>
                 <Input
                   id="name"
-                  placeholder="Entre Your Name"
+                  placeholder="Enter your full name"
                   required
                   className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus-visible:ring-black h-12 border-2"
                   value={formData.name}
@@ -171,7 +172,7 @@ export function Contact() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="Enter Your Email"
+                  placeholder="Enter your email address"
                   required
                   className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus-visible:ring-black h-12 border-2"
                   value={formData.email}
@@ -179,10 +180,10 @@ export function Contact() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="message" className="text-gray-900 font-bold">Your Message</Label>
+                <Label htmlFor="message" className="text-gray-900 font-bold">Project Details & Message</Label>
                 <Textarea
                   id="message"
-                  placeholder="Hello Akash..."
+                  placeholder="Tell me about your project requirements, goals, or timeline..."
                   rows={5}
                   required
                   className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500 focus-visible:ring-black resize-none pt-4 border-2"
