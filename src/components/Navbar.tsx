@@ -50,7 +50,7 @@ export function Navbar() {
         </nav>
 
         {/* Mobile Nav Toggle */}
-        <button className="md:hidden text-foreground ml-auto" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button aria-label="Toggle mobile menu" className="md:hidden text-foreground ml-auto" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
