@@ -4,13 +4,13 @@ export function Footer() {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/Akashshelke07",
+      url: "https://github.com/Akashshelke07/",
       icon: Github,
       colorClass: "text-[#181717] hover:bg-[#181717]/10",
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/akash-shelke-5b1520259",
+      url: "https://www.linkedin.com/in/akash-kailas-shelke-5b1520259/",
       icon: Linkedin,
       colorClass: "text-[#0A66C2] hover:bg-[#0A66C2]/10",
     },
