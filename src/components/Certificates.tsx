@@ -9,7 +9,7 @@ import gssocImg from "../Gssoc.jpg"
 import gdgcImg from "../GDGC.webp"
 import pubImg from "../Pub.jpg"
 
-function ImageSlider({ images, onImageClick }: { images: string[], onImageClick: (img: string) => void }) {
+function ImageSlider({ images, altText, onImageClick }: { images: string[], altText: string, onImageClick: (img: string) => void }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextImage = (e: React.MouseEvent) => {
@@ -31,8 +31,8 @@ function ImageSlider({ images, onImageClick }: { images: string[], onImageClick:
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.2 }}
-          src={images[currentIndex]} 
-          alt="Event Photo" 
+          src={images[currentIndex]}
+          alt={altText}
           className="w-full h-full object-contain cursor-pointer" 
           onClick={() => onImageClick(images[currentIndex])}
         />
@@ -159,7 +159,7 @@ export function Certificates() {
                 >
                   <div className="space-y-4 w-full">
                     {item.images && item.images.length > 0 && (
-                      <ImageSlider images={item.images} onImageClick={setSelectedImage} />
+                      <ImageSlider images={item.images} altText={item.title} onImageClick={setSelectedImage} />
                     )}
                     <div>
                       <h3 className="font-semibold text-foreground text-lg leading-tight mb-1.5">{item.title}</h3>
@@ -221,7 +221,7 @@ export function Certificates() {
                 >
                   <div className="space-y-4 w-full">
                     {item.images && item.images.length > 0 && (
-                      <ImageSlider images={item.images} onImageClick={setSelectedImage} />
+                      <ImageSlider images={item.images} altText={item.title} onImageClick={setSelectedImage} />
                     )}
                     <div>
                       <div className="flex items-center gap-2 mb-1.5">
@@ -259,7 +259,7 @@ export function Certificates() {
               animate={{ scale: 1 }}
               exit={{ scale: 0.9 }}
               src={selectedImage}
-              alt="Expanded view"
+              alt={`Expanded view of ${selectedImage?.split('/').pop() ?? 'image'}`}
               className="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain cursor-default"
               onClick={(e) => e.stopPropagation()}
             />
