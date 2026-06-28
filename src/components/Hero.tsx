@@ -1,7 +1,5 @@
 import { motion } from "framer-motion"
-import { Button } from "./ui/button"
-import { Link } from "react-scroll"
-import { Briefcase, FileText } from "lucide-react"
+
 import heroAnimation from "../transparent_gitgif.gif"
 import Typewriter from "typewriter-effect"
 
@@ -123,40 +121,7 @@ export function Hero() {
               </span>
             </motion.div>
 
-            {/* CTA Buttons */}
-            <motion.div 
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 pt-4"
-            >
-              <Link to="projects" smooth={true} duration={500}>
-                <Button size="lg" className="h-14 px-10 bg-green-600 hover:bg-green-700 text-white rounded-full transition-all duration-300 shadow-xl shadow-green-600/20 group relative overflow-hidden border-0">
-                  <span className="relative z-10 flex items-center">
-                    <Briefcase className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                    View Projects
-                  </span>
-                  <motion.div 
-                    className="absolute inset-0 bg-white/10" 
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "100%" }}
-                    transition={{ duration: 0.6 }}
-                  />
-                </Button>
-              </Link>
-              <a href="https://drive.google.com/file/d/1dsAa0kBokSfBt2V_4ek72punWb-LydOt/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="h-14 px-10 bg-[#ea580c] hover:bg-[#c2410c] text-white rounded-full transition-all duration-300 shadow-xl shadow-[#ea580c]/20 group relative overflow-hidden border-0">
-                  <span className="relative z-10 flex items-center">
-                    <FileText className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                    Resume
-                  </span>
-                  <motion.div 
-                    className="absolute inset-0 bg-white/10" 
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "100%" }}
-                    transition={{ duration: 0.6 }}
-                  />
-                </Button>
-              </a>
-            </motion.div>
+
           </motion.div>
 
           {/* GIF Animation Content */}
