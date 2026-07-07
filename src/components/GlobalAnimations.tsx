@@ -1,10 +1,7 @@
 import { 
-  Brain, Code, Cpu, Database, Globe, Rocket, Terminal, Layout, Briefcase, 
-  GraduationCap, Send, MessageSquare, Trophy, Server, Monitor, Cloud, Zap, Cog,
-  Activity, Aperture, Battery, Bluetooth, Bookmark, Box, Calendar, Camera, 
-  Code2, Command, Compass, Fingerprint, Focus, Hash, Keyboard, Layers, Link, 
-  Map, Mouse, Navigation, Network, PieChart, Shield, Smartphone, Tablet, Wifi,
-  BarChart, GitBranch, CpuIcon, Webhook
+  Brain, Code, Cpu, Database, Rocket, Terminal, Layout, Briefcase, 
+  GraduationCap, Send, Trophy, Server, Monitor, Cloud, Zap, 
+  Camera, Command, Smartphone, Tablet, Network
 } from "lucide-react"
 import { FloatingElement } from "./ui/FloatingElement"
 import { motion } from "framer-motion"
