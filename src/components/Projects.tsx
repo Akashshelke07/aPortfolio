@@ -87,7 +87,6 @@ export function Projects() {
       title: "Cloud Database-as-a-Service (DBaaS) Platform",
       description: "Cloud-native DBaaS platform for spinning up, managing, and monitoring MySQL, PostgreSQL, MongoDB, and Redis databases from the browser, featuring Prometheus/Grafana monitoring and an LLM-powered assistant.",
       techStack: ["React", "Node.js", "Docker", "PostgreSQL", "Prometheus", "Grafana", "LLM APIs"],
-      github: "#",
       image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000&auto=format&fit=crop"
     },
     {
@@ -151,24 +150,30 @@ export function Projects() {
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter className="pt-4 border-t border-border/50 flex flex-col sm:flex-row gap-4">
-                  {project.github && (
-                    <Button variant="outline" size="sm" className="w-full flex items-center justify-center gap-2 hover:bg-primary hover:text-primary-foreground group-hover:border-primary/50 transition-colors" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4" />
-                        GitHub
-                      </a>
-                    </Button>
-                  )}
-                  {project.liveDemo && (
-                    <Button size="sm" className="w-full flex items-center justify-center gap-2 bg-black hover:bg-slate-800 text-white" asChild>
-                      <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4" />
-                        Live Demo
-                      </a>
-                    </Button>
-                  )}
-                </CardFooter>
+                { (project.github || project.liveDemo) ? (
+                  <CardFooter className="pt-4 border-t border-border/50 flex flex-col sm:flex-row gap-4">
+                    {project.github && (
+                      <Button variant="outline" size="sm" className="w-full flex items-center justify-center gap-2 hover:bg-primary hover:text-primary-foreground group-hover:border-primary/50 transition-colors" asChild>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4" />
+                          GitHub
+                        </a>
+                      </Button>
+                    )}
+                    {project.liveDemo && (
+                      <Button size="sm" className="w-full flex items-center justify-center gap-2 bg-black hover:bg-slate-800 text-white" asChild>
+                        <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4" />
+                          Live Demo
+                        </a>
+                      </Button>
+                    )}
+                  </CardFooter>
+                ) : (
+                  <CardFooter className="pt-4 flex flex-col sm:flex-row gap-4">
+                    <div className="h-9 w-full invisible" />
+                  </CardFooter>
+                )}
               </Card>
             </motion.div>
           ))}

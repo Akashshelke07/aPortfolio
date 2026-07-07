@@ -64,7 +64,7 @@ export function Hero() {
             {/* Subheading */}
             <motion.h2 
               variants={itemVariants}
-              className="text-2xl md:text-3xl font-bold text-black tracking-wide h-10 md:h-12 flex items-center justify-center lg:justify-start"
+              className="text-2xl md:text-3xl font-extrabold tracking-wide h-10 md:h-12 flex items-center justify-center lg:justify-start text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-sky-800 drop-shadow-sm"
             >
               <Typewriter
                 options={{
@@ -92,7 +92,7 @@ export function Hero() {
             {/* Tagline Badges */}
             <motion.p 
               variants={itemVariants}
-              className="text-lg md:text-xl text-black max-w-2xl lg:mx-0 mx-auto leading-relaxed font-bold pt-3"
+              className="text-lg md:text-xl max-w-2xl lg:mx-0 mx-auto leading-relaxed font-extrabold pt-3 text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-800 drop-shadow-sm italic"
             >
               "Designing and building production-grade AI solutions and web applications for real-world challenges."
             </motion.p>

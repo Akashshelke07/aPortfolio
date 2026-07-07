@@ -1,4 +1,11 @@
-import { Brain, Code, Cpu, Database, Globe, Rocket, Terminal, Layout, Briefcase, GraduationCap, Send, MessageSquare, Trophy, Server, Monitor, Cloud, Zap, Cog } from "lucide-react"
+import { 
+  Brain, Code, Cpu, Database, Globe, Rocket, Terminal, Layout, Briefcase, 
+  GraduationCap, Send, MessageSquare, Trophy, Server, Monitor, Cloud, Zap, Cog,
+  Activity, Aperture, Battery, Bluetooth, Bookmark, Box, Calendar, Camera, 
+  Code2, Command, Compass, Fingerprint, Focus, Hash, Keyboard, Layers, Link, 
+  Map, Mouse, Navigation, Network, PieChart, Shield, Smartphone, Tablet, Wifi,
+  BarChart, GitBranch, CpuIcon, Webhook
+} from "lucide-react"
 import { FloatingElement } from "./ui/FloatingElement"
 import { motion } from "framer-motion"
 
@@ -37,6 +44,38 @@ const TechMesh = () => (
   </svg>
 )
 
+const floatingIcons = [
+  // Row 1 (Top 0-20%)
+  { icon: Brain, className: "top-[8%] left-[10%]", delay: 0, duration: 8 },
+  { icon: Rocket, className: "top-[12%] left-[38%]", delay: 4, duration: 10 },
+  { icon: Camera, className: "top-[5%] left-[60%]", delay: 2, duration: 9 },
+  { icon: Tablet, className: "top-[15%] left-[85%]", delay: 5, duration: 11 },
+
+  // Row 2 (Upper-Middle 20-40%)
+  { icon: Cpu, className: "top-[30%] left-[15%]", delay: 1.5, duration: 9 },
+  { icon: Code, className: "top-[25%] left-[32%]", delay: 0.5, duration: 7 },
+  { icon: Server, className: "top-[35%] left-[65%]", delay: 3, duration: 10 },
+  { icon: Smartphone, className: "top-[28%] left-[90%]", delay: 2.2, duration: 8 },
+
+  // Row 3 (Center 40-60%)
+  { icon: Layout, className: "top-[50%] left-[8%]", delay: 1, duration: 8 },
+  { icon: Monitor, className: "top-[55%] left-[40%]", delay: 3.5, duration: 10 },
+  { icon: Database, className: "top-[45%] left-[58%]", delay: 1.8, duration: 9 },
+  { icon: Zap, className: "top-[52%] left-[82%]", delay: 0.8, duration: 7 },
+
+  // Row 4 (Lower-Middle 60-80%)
+  { icon: Command, className: "top-[75%] left-[12%]", delay: 2.6, duration: 11 },
+  { icon: Cloud, className: "top-[65%] left-[35%]", delay: 1.2, duration: 8 },
+  { icon: Briefcase, className: "top-[72%] left-[62%]", delay: 4, duration: 11 },
+  { icon: Trophy, className: "top-[68%] left-[88%]", delay: 2.5, duration: 9 },
+
+  // Row 5 (Bottom 80-100%)
+  { icon: Terminal, className: "top-[85%] left-[18%]", delay: 2, duration: 9 },
+  { icon: GraduationCap, className: "top-[95%] left-[42%]", delay: 1.5, duration: 8 },
+  { icon: Send, className: "top-[88%] left-[68%]", delay: 3.5, duration: 12 },
+  { icon: Network, className: "top-[92%] left-[85%]", delay: 4.2, duration: 10 },
+];
+
 export function GlobalAnimations() {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden h-full">
@@ -48,26 +87,16 @@ export function GlobalAnimations() {
         <rect width="100%" height="100%" fill="url(#grid)" />
       </svg>
 
-      {/* Scattered Tech Icons - Using fixed viewport percentages for a 'starfield' effect */}
-      <FloatingElement icon={Brain} className="top-[8%] left-[5%]" delay={0} duration={6} />
-      <FloatingElement icon={Cpu} className="top-[22%] right-[8%]" delay={1.5} duration={5} />
-      <FloatingElement icon={Terminal} className="top-[38%] left-[12%]" delay={2} duration={8} />
-      <FloatingElement icon={Code} className="top-[52%] right-[4%]" delay={0.5} duration={7} />
-      <FloatingElement icon={Database} className="top-[68%] left-[8%]" delay={3} duration={9} />
-      <FloatingElement icon={Globe} className="top-[82%] right-[10%]" delay={2.5} duration={8} />
-      <FloatingElement icon={Rocket} className="top-[12%] right-[18%]" delay={4} duration={10} />
-      <FloatingElement icon={Layout} className="top-[42%] right-[18%]" delay={1} duration={7} />
-      <FloatingElement icon={Briefcase} className="top-[72%] left-[18%]" delay={3} duration={9} />
-      <FloatingElement icon={GraduationCap} className="top-[88%] left-[12%]" delay={2} duration={8} />
-      <FloatingElement icon={Trophy} className="top-[58%] left-[4%]" delay={1} duration={7} />
-      <FloatingElement icon={MessageSquare} className="top-[78%] right-[4%]" delay={2.5} duration={8} />
-      <FloatingElement icon={Send} className="top-[28%] left-[4%]" delay={4} duration={10} />
-      {/* Middle Scattered Tech Icons */}
-      <FloatingElement icon={Server} className="top-[15%] left-[24%]" delay={1.2} duration={7} />
-      <FloatingElement icon={Cloud} className="top-[85%] right-[22%]" delay={3.5} duration={9} />
-      <FloatingElement icon={Zap} className="top-[45%] left-[26%]" delay={0.8} duration={6} />
-      <FloatingElement icon={Monitor} className="top-[65%] right-[26%]" delay={2.2} duration={8} />
-      <FloatingElement icon={Cog} className="top-[95%] left-[22%]" delay={4.5} duration={10} />
+      {/* Scattered Tech Icons - mapped from array for maximum density */}
+      {floatingIcons.map((item, i) => (
+        <FloatingElement 
+          key={i} 
+          icon={item.icon} 
+          className={item.className} 
+          delay={item.delay} 
+          duration={item.duration} 
+        />
+      ))}
 
       {/* TechMesh from Hero */}
       <TechMesh />
