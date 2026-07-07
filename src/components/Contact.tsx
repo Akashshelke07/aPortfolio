@@ -100,7 +100,7 @@ export function Contact() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
             className="space-y-6"
           >
             {[
@@ -149,7 +149,7 @@ export function Contact() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
             className="p-8 rounded-2xl border-2 border-gray-100 shadow-2xl relative overflow-hidden group transition-all duration-500"
           >
             {/* Subtle inner glow (very light for transparent background) */}

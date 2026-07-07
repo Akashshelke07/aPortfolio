@@ -153,7 +153,7 @@ export function Certificates() {
                   key={idx}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  viewport={{ once: true, margin: "0px" }}
                   transition={{ duration: 0.4, delay: idx * 0.1 }}
                   className="flex flex-col p-6 rounded-2xl border border-border/50 bg-card/40 backdrop-blur-sm hover:border-black/30 hover:bg-card/60 transition-colors shadow-sm"
                 >
@@ -180,7 +180,7 @@ export function Certificates() {
                   key={idx}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  viewport={{ once: true, margin: "0px" }}
                   transition={{ duration: 0.4, delay: idx * 0.1 }}
                   className="flex flex-col p-6 rounded-2xl border border-border/50 bg-card/40 backdrop-blur-sm hover:border-black/30 hover:bg-card/60 transition-colors shadow-sm h-full"
                 >
@@ -215,7 +215,7 @@ export function Certificates() {
                   key={idx}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  viewport={{ once: true, margin: "0px" }}
                   transition={{ duration: 0.4, delay: idx * 0.1 }}
                   className="flex flex-col p-6 rounded-2xl border border-border/50 bg-card/40 backdrop-blur-sm hover:border-black/30 hover:bg-card/60 transition-colors shadow-sm lg:col-span-2"
                 >

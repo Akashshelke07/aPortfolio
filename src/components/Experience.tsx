@@ -48,8 +48,8 @@ export function Experience() {
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              viewport={{ once: true, margin: "0px" }}
+              transition={{ duration: 0.3, delay: idx * 0.1 }}
               className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active`}
             >
               <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-black shadow shrink-0 absolute left-5 md:left-1/2 -translate-x-1/2 z-10">

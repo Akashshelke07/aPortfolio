@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akashshelke07.github.io/aPortfolio/sitemap.xml

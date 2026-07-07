@@ -100,12 +100,12 @@ export function Projects() {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+    visible: { opacity: 1, transition: { staggerChildren: 0.05 } }
   }
 
   const itemVariants = {
     hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } }
   }
 
   return (
@@ -120,7 +120,7 @@ export function Projects() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "0px" }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto"
         >
           {projects.map((project, idx) => (
