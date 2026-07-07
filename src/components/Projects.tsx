@@ -127,12 +127,22 @@ export function Projects() {
             <motion.div key={idx} variants={itemVariants} className="h-full">
               <Card className="h-full flex flex-col overflow-hidden border-border/40 bg-card/60 backdrop-blur-sm group hover:border-black/50 hover:shadow-xl hover:shadow-black/10 transition-all duration-300">
                 <div className="h-48 overflow-hidden relative border-b border-border/50">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500 z-10" />
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" 
-                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500 z-10 pointer-events-none" />
+                  {project.liveDemo ? (
+                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" 
+                      />
+                    </a>
+                  ) : (
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" 
+                    />
+                  )}
                 </div>
                 <CardHeader>
                   <CardTitle className="text-2xl group-hover:text-black transition-colors">{project.title}</CardTitle>

@@ -1,39 +1,9 @@
 import { motion } from "framer-motion"
-import { Code2, BrainCircuit, Rocket, Globe } from "lucide-react"
+import { Code2, BrainCircuit, Rocket, Globe, ExternalLink } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
+import { Button } from "./ui/button"
 
 export function Freelance() {
-  const services = [
-    {
-      title: "AI & LLM Integration",
-      description: "Custom AI solutions, RAG pipelines, and LLM integrations to automate workflows and enhance your product's intelligence.",
-      icon: BrainCircuit,
-      color: "text-blue-500",
-      bgColor: "bg-blue-500/10"
-    },
-    {
-      title: "Full-Stack Web Development",
-      description: "End-to-end web application development using modern MERN stack, Next.js, and scalable cloud architectures.",
-      icon: Globe,
-      color: "text-emerald-500",
-      bgColor: "bg-emerald-500/10"
-    },
-    {
-      title: "API Development & Architecture",
-      description: "Designing and building robust, secure, and high-performance REST and GraphQL APIs for your platforms.",
-      icon: Code2,
-      color: "text-purple-500",
-      bgColor: "bg-purple-500/10"
-    },
-    {
-      title: "MVP Development",
-      description: "Rapid prototyping and MVP development to get your startup idea from concept to market quickly and efficiently.",
-      icon: Rocket,
-      color: "text-orange-500",
-      bgColor: "bg-orange-500/10"
-    }
-  ]
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
@@ -48,40 +18,114 @@ export function Freelance() {
     <section id="freelance" className="py-20 bg-muted/30 relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Freelance Services</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            I am available for freelance opportunities. Here's how I can help you build and scale your next big idea.
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Freelance</h2>
+          <p className="text-red-700 font-semibold max-w-2xl mx-auto text-lg">
+            I'm currently available for freelance opportunities and open to collaborating with startups, businesses, and ambitious founders.
           </p>
           <div className="h-1 w-20 bg-black mx-auto rounded-full mt-4" />
         </div>
 
         <motion.div
-          variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"
+          variants={containerVariants}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16"
         >
-          {services.map((service, idx) => {
-            const Icon = service.icon
-            return (
-              <motion.div key={idx} variants={itemVariants} className="h-full">
-                <Card className="h-full border-border/50 bg-card/50 backdrop-blur-sm hover:border-black/30 hover:shadow-lg transition-all duration-300 overflow-hidden group">
-                  <CardHeader>
-                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${service.bgColor} group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className={`w-6 h-6 ${service.color}`} />
-                    </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            )
-          })}
+          {/* Project 1 */}
+          <motion.div variants={itemVariants}>
+            <a href="https://www.sbrainiaclearning.com/" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+              <Card className="flex flex-col overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm group hover:border-black/30 hover:shadow-xl transition-all duration-300 cursor-pointer h-full">
+                <div className="overflow-hidden relative border-b border-border/50 bg-black/5">
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+                  <img 
+                    src={`${import.meta.env.BASE_URL}Screenshot/sbrain.png`}
+                    alt="S. Brainiac Learning" 
+                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-2xl font-bold group-hover:text-red-700 transition-colors">S. Brainiac Learning</h3>
+                </div>
+              </Card>
+            </a>
+          </motion.div>
+
+          {/* Project 2 */}
+          <motion.div variants={itemVariants}>
+            <a href="https://www.humanityconserve.co.in/" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+              <Card className="flex flex-col overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm group hover:border-black/30 hover:shadow-xl transition-all duration-300 cursor-pointer h-full">
+                <div className="overflow-hidden relative border-b border-border/50 bg-black/5">
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+                  <img 
+                    src={`${import.meta.env.BASE_URL}Screenshot/Humanity.png`}
+                    alt="Humanity Conserve" 
+                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-xl md:text-2xl font-bold group-hover:text-red-700 transition-colors">Humanity Conserve</h3>
+                </div>
+              </Card>
+            </a>
+          </motion.div>
+
+          {/* Project 3 */}
+          <motion.div variants={itemVariants}>
+            <a href="https://car-wow-swart.vercel.app/" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+              <Card className="flex flex-col overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm group hover:border-black/30 hover:shadow-xl transition-all duration-300 cursor-pointer h-full">
+                <div className="overflow-hidden relative border-b border-border/50 bg-black/5">
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+                  <img 
+                    src={`${import.meta.env.BASE_URL}Screenshot/Autoverse.png`}
+                    alt="AutoVerse (incomplete)" 
+                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-xl md:text-2xl font-bold group-hover:text-red-700 transition-colors">AutoVerse (incomplete)</h3>
+                </div>
+              </Card>
+            </a>
+          </motion.div>
+
+          {/* Project 4 */}
+          <motion.div variants={itemVariants}>
+            <div className="block w-full h-full">
+              <Card className="flex flex-col overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm group hover:border-black/30 hover:shadow-xl transition-all duration-300 cursor-pointer h-full">
+                <div className="overflow-hidden relative border-b border-border/50 bg-black/5">
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+                  <img 
+                    src={`${import.meta.env.BASE_URL}Screenshot/OIP.webp`}
+                    alt="AI Powered Autoshift Software" 
+                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-xl md:text-2xl font-bold group-hover:text-red-700 transition-colors">AI Powered Autoshift Software</h3>
+                </div>
+              </Card>
+            </div>
+          </motion.div>
+
+          {/* Project 5 */}
+          <motion.div variants={itemVariants}>
+            <a href="https://soultechsolutions.vercel.app/" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+              <Card className="flex flex-col overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm group hover:border-black/30 hover:shadow-xl transition-all duration-300 cursor-pointer h-full">
+                <div className="overflow-hidden relative border-b border-border/50 bg-black/5">
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+                  <img 
+                    src={`${import.meta.env.BASE_URL}Screenshot/soultechsolutions.png`}
+                    alt="Soultech Solutions" 
+                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-xl md:text-2xl font-bold group-hover:text-red-700 transition-colors">Soultech Solutions</h3>
+                </div>
+              </Card>
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </section>
