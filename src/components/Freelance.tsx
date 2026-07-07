@@ -1,7 +1,5 @@
 import { motion } from "framer-motion"
-import { Code2, BrainCircuit, Rocket, Globe, ExternalLink } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
-import { Button } from "./ui/button"
+import { Card } from "./ui/card"
 
 export function Freelance() {
   const containerVariants = {
